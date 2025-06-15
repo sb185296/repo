@@ -1,0 +1,380 @@
+{
+  "config": {
+    "configFile": "/root/emeraldgx-playwright/playwright.config.ts",
+    "rootDir": "/root/emeraldgx-playwright/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-report/test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "playwright-report/test-results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/root/emeraldgx-playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/root/emeraldgx-playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/root/emeraldgx-playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/root/emeraldgx-playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/root/emeraldgx-playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/root/emeraldgx-playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.52.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "register.spec.ts",
+      "file": "register.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "register-touchpoint",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 30684,
+                  "error": {
+                    "message": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('FormSubmit') to be visible\u001b[22m\n",
+                    "stack": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('FormSubmit') to be visible\u001b[22m\n\n    at /root/emeraldgx-playwright/tests/register.spec.ts:8:43",
+                    "location": {
+                      "file": "/root/emeraldgx-playwright/tests/register.spec.ts",
+                      "column": 43,
+                      "line": 8
+                    },
+                    "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m\n \u001b[90m  7 |\u001b[39m     \u001b[90m// register\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'FormSubmit'\u001b[39m)\u001b[33m.\u001b[39mwaitFor()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'userid-input'\u001b[39m)\u001b[33m.\u001b[39mfill(data\u001b[33m.\u001b[39musers\u001b[33m.\u001b[39mcashier\u001b[33m.\u001b[39musername)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'password-input'\u001b[39m)\u001b[33m.\u001b[39mfill(data\u001b[33m.\u001b[39musers\u001b[33m.\u001b[39mcashier\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'touchpoint-input'\u001b[39m)\u001b[33m.\u001b[39mfill(data\u001b[33m.\u001b[39mregistration\u001b[33m.\u001b[39mtouchpointId)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/root/emeraldgx-playwright/tests/register.spec.ts",
+                        "column": 43,
+                        "line": 8
+                      },
+                      "message": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('FormSubmit') to be visible\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m\n \u001b[90m  7 |\u001b[39m     \u001b[90m// register\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'FormSubmit'\u001b[39m)\u001b[33m.\u001b[39mwaitFor()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'userid-input'\u001b[39m)\u001b[33m.\u001b[39mfill(data\u001b[33m.\u001b[39musers\u001b[33m.\u001b[39mcashier\u001b[33m.\u001b[39musername)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'password-input'\u001b[39m)\u001b[33m.\u001b[39mfill(data\u001b[33m.\u001b[39musers\u001b[33m.\u001b[39mcashier\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'touchpoint-input'\u001b[39m)\u001b[33m.\u001b[39mfill(data\u001b[33m.\u001b[39mregistration\u001b[33m.\u001b[39mtouchpointId)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /root/emeraldgx-playwright/tests/register.spec.ts:8:43\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-06-15T13:53:22.559Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "_error-context-0",
+                      "contentType": "text/markdown",
+                      "path": "/root/emeraldgx-playwright/test-results/register-register-touchpoint-chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/root/emeraldgx-playwright/tests/register.spec.ts",
+                    "column": 43,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ab6fb19b790d2390d751-2df571e0137380d3a890",
+          "file": "register.spec.ts",
+          "line": 5,
+          "column": 5
+        },
+        {
+          "title": "user-login",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14734,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-06-15T13:53:54.351Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ab6fb19b790d2390d751-fe4b0052ab1494cbd9df",
+          "file": "register.spec.ts",
+          "line": 21,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "sale.spec.ts",
+      "file": "sale.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "sale-regular-items",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "interrupted",
+                  "duration": 10702,
+                  "error": {
+                    "message": "Error: locator.click: Target page, context or browser has been closed",
+                    "stack": "Error: locator.click: Target page, context or browser has been closed\n    at /root/emeraldgx-playwright/tests/sale.spec.ts:21:54",
+                    "location": {
+                      "file": "/root/emeraldgx-playwright/tests/sale.spec.ts",
+                      "column": 54,
+                      "line": 21
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m enterNBarcodes(_page\u001b[33m,\u001b[39m\u001b[35m4\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m checkout(_page)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'tender-button-CashEng'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                  
+    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m submit(_page)\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'cart-container'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/root/emeraldgx-playwright/tests/sale.spec.ts",
+                        "column": 54,
+                        "line": 21
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\n\n\u001b[0m \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m enterNBarcodes(_page\u001b[33m,\u001b[39m\u001b[35m4\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m checkout(_page)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'tender-button-CashEng'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m submit(_page)\u001b[33m;\u001b[39m\n \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m _page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'cart-container'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m\u001b[0m\n\u001b[2m    at /root/emeraldgx-playwright/tests/sale.spec.ts:21:54\u001b[22m"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "added item: 15 with quantity: \u001b[33m0\u001b[39m\n"
+                    },
+                    {
+                      "text": "added item: 1 with quantity: \u001b[33m0\u001b[39m\n"
+                    },
+                    {
+                      "text": "added item: 1058 with quantity: 3\n"
+                    },
+                    {
+                      "text": "added item: 1234 with quantity: 2\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-06-15T13:54:09.197Z",
+                  "annotations": [],
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/root/emeraldgx-playwright/tests/sale.spec.ts",
+                    "column": 54,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee951b9f8efecf7797b8-ef34d34d77f984ed7bf6",
+          "file": "sale.spec.ts",
+          "line": 16,
+          "column": 5
+        },
+        {
+          "title": "save-and-recall",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee951b9f8efecf7797b8-25d812cdf4fe103f7163",
+          "file": "sale.spec.ts",
+          "line": 27,
+          "column": 5
+        },
+        {
+          "title": "transaction-based-return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee951b9f8efecf7797b8-4c6d2da40e76c8b6958b",
+          "file": "sale.spec.ts",
+          "line": 46,
+          "column": 5
+        },
+        {
+          "title": "void-transaction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee951b9f8efecf7797b8-70d1f25393e6d2989f45",
+          "file": "sale.spec.ts",
+          "line": 62,
+          "column": 5
+        },
+        {
+          "title": "return-item",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee951b9f8efecf7797b8-46528be1dd6678297a76",
+          "file": "sale.spec.ts",
+          "line": 68,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-06-15T13:53:21.667Z",
+    "duration": 58356.06,
+    "expected": 1,
+    "skipped": 5,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
